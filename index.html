@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Discord Bot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: #fff; /* White background color */
+            color: #000; /* Black text color */
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            color: #000; /* Black title text color */
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #000; /* Black text color for paragraphs */
+            margin: 5px 0;
+        }
+
+        a {
+            color: #000; /* Black link text color */
+            text-decoration: none;
+        }
+
+        .bot-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 10px; /* Left side as requested */
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            background-color: #fff; /* White background for the menu */
+            color: #000; /* Black text color for the menu */
+            border: 1px solid #000; /* Black border for the menu */
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 30%;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .menu a {
+            color: #000; /* Black link text color */
+            text-decoration: none;
+            margin: 5px;
+        }
+
+        .close-icon {
+            font-size: 20px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px; /* Close icon on the right side of the menu */
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 20px; /* Adjusted padding */
+        }
+
+        .feature-card {
+            width: 200px;
+            padding: 20px;
+            background-color: #eee; /* Lighter background for features */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            margin: 0 10px 20px;
+            text-align: left;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+
+        .wider-feature-card {
+            width: 400px;
+            margin: 0 10px 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #fff; /* White background for buttons */
+            color: #000; /* Black text color for buttons */
+            border: 1px solid #000; /* Black border for buttons */
+            padding: 10px 20px; /* Adjusted padding */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            margin: 0 10px;
+        }
+
+        .button:hover {
+            background-color: #eee; /* Lighter shade on hover */
+        }
+
+        /* Wave background */
+        body:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: repeating-linear-gradient(180deg, #eee, #eee 5px, #fff 5px, #fff 10px);
+        }
+
+        @media (min-width: 768px) {
+            /* Styles for larger screens (PC) */
+            body {
+                align-items: flex-start;
+                padding-top: 50px;
+                overflow-y: scroll;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1.2em;
+            }
+
+            .bot-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .menu-icon {
+                left: 10px; /* Keep it on the left side for larger screens */
+            }
+
+            .menu {
+                display: flex;
+            }
+
+            .features {
+                margin-top: 20px;
+            }
+
+            .feature-card, .wider-feature-card {
+                margin: 0 10px 20px;
+            }
+
+            .button {
+                padding: 10px 20px; /* Adjusted padding for PC */
+                font-size: 14px; /* Adjusted font size for PC */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Icon for PC -->
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <!-- Menu for PC -->
+    <div class="menu">
+        <div class="close-icon" onclick="toggleMenu()">✖</div>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Features</a>
+        <a href="#">Contact</a>
+        <a href="#">About Us</a>
+        <p>Servers: 10+</p>
+        <p>Users: 250+</p>
+    </div>
+
+    <!-- Bot Icon -->
+
+    <h1>MYRAX</h1>
+    <p>Meet Myrax, your all-in-one Discord companion designed to elevate your server experience. Whether you need moderation tools, entertainment features, or utility commands, Myrax has got you covered. With a sleek and intuitive interface, Myrax is the Swiss Army knife of Discord bots, offering a diverse range of functionalities to enhance your server dynamics.</p>
+
+    <div class="buttons">
+        <a class="button" href="https://discord.com/oauth2/authorize?client_id=1210693713030946826&permissions=8&scope=bot" target="_blank">Invite Myrax</a>
+        <a class="button" href="/login" target="_blank">Dashboard</a>
+    </div>
+    
+    <!-- Add your bot invite link -->
+
+    <p>Elevating Discord with simplicity, versatility, and innovation in one bot.</p>
+
+    <div class="features">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+            <h3>Fast</h3>
+            <p>Our bot is very fast as its little and also because its stocked on servers that are made for artificial inteligance so the speed is faster than sonic.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+            <h3>Security</h3>
+            <p>Our bot's security is as securized as your data being on an server and getting transported every weeks to an other server so nobody can even think about accessing your servers's data or yours.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Data</h3>
+            <p>We only store: oauth tokens (the code to make you verify.), the servers you are admin in (if we dint we wouldnt have an web dashboard bc then you cant manage your servers), server stats (the amount of users, channels, roles, etc, only used for the dashboard and commands.)</p>
+        </div>
+
+    <p>Contact us for any inquiries or support: <a href="https://discord.com/invite/VndxxBpvh9">mxersion@mxersion.com</a></p>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector(".menu");
+            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+        }
+    </script>
+</body>
+</html>
