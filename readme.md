@@ -11,8 +11,8 @@
 # ***INFOS***
 
 ***• Site: https://myrax.xyz***
-***• Docs: https://myrax.xyz/docs/***
-***• Discord Server: https://discord.com/invite/ARRXzF6kbR***
+***• Docs: https://docs.myrax.xyz/docs/***
+***• Discord Server: https://discord.myrax.xyz***
 
 # Examples using Myrax***
 ***• Comming soon.***
